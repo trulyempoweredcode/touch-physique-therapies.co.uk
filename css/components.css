@@ -48,6 +48,24 @@
   gap: 2px;
 }
 
+.nav__logo {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Logo beside title — add .nav__brand--inline to .nav__brand */
+.nav__brand--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav__brand--inline .nav__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .nav__name {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
