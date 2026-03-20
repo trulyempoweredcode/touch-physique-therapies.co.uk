@@ -839,6 +839,8 @@
 
 .hero--fullwidth .hero__ticks li {
   color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .hero--fullwidth .hero__ticks svg {
@@ -961,6 +963,16 @@
 
 .hero--minimal .hero__ticks {
   justify-content: center;
+}
+
+.hero--minimal .hero__ticks li {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero--minimal .hero__ticks svg {
+  color: var(--color-secondary-light);
 }
 
 @media (min-width: 768px) {
