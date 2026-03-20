@@ -1400,7 +1400,7 @@
 }
 
 .card__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -1992,7 +1992,7 @@
 }
 
 .pricing-card h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -2434,7 +2434,7 @@
 
 .highlight-box__heading h3 {
   color: var(--color-text-inverse);
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   line-height: var(--line-height-tight);
 }
 
@@ -2633,7 +2633,7 @@
 }
 
 .icon-box__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -2837,7 +2837,7 @@
 }
 
 .step__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -2935,7 +2935,7 @@
 }
 
 .image-card__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -3013,7 +3013,7 @@
 }
 
 .overlay-card__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   color: var(--color-text-inverse);
   font-weight: var(--font-weight-bold);
 }
@@ -3043,7 +3043,7 @@
 }
 
 .bento__item h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-sm);
 }
 
@@ -3627,7 +3627,7 @@
 }
 
 .team-member__name {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-xs);
 }
 
@@ -3964,7 +3964,7 @@
 }
 
 .fee-table h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-lg);
 }
 
@@ -4121,7 +4121,7 @@
 }
 
 .details-table h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-bottom: var(--space-lg);
 }
 
@@ -4938,7 +4938,7 @@
 }
 
 .blog-post__body h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-sm);
 }
@@ -5101,7 +5101,7 @@
 
 .blog-card__title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-h3-desktop);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-heading);
   line-height: var(--line-height-tight);
