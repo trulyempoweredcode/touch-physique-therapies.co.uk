@@ -1283,6 +1283,227 @@
   }
 }
 
+/* --- Image Hero: full-bleed background image with dark overlay --- */
+.hero--image {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-dark);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero--image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.hero--image .hero__inner {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.hero--image .hero__content {
+  order: 1;
+  max-width: 720px;
+}
+
+.hero--image .hero__image-wrap {
+  display: none;
+}
+
+.hero--image .hero__label {
+  color: var(--color-secondary-light);
+}
+
+.hero--image .hero__heading {
+  color: var(--color-text-inverse);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero--image .hero__text {
+  color: rgba(255, 255, 255, 0.9);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+.hero--image .hero__actions {
+  justify-content: center;
+}
+
+.hero--image .hero__ticks {
+  justify-content: center;
+}
+
+.hero--image .hero__ticks li {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero--image .hero__ticks svg {
+  color: var(--color-secondary-light);
+}
+
+.hero--image .btn--primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+
+.hero--image .btn--primary:hover {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+}
+
+.hero--image .btn--secondary {
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero--image .btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-text-inverse);
+}
+
+@media (min-width: 768px) {
+  .hero--image {
+    padding: var(--space-4xl) 0;
+    min-height: 650px;
+  }
+}
+
+/* --- Banner Hero: contained, shorter image strip with overlay text --- */
+.hero--banner {
+  padding: 0;
+}
+
+.hero--banner .hero__inner {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.hero--banner .hero__image-wrap {
+  position: relative;
+  order: 0;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.hero--banner .hero__image,
+.hero--banner .hero__image-placeholder {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  aspect-ratio: auto;
+}
+
+.hero--banner .hero__content {
+  order: 1;
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.hero--banner .hero__heading {
+  font-size: var(--text-h2-desktop);
+}
+
+.hero--banner .hero__text {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--banner .hero__actions {
+  justify-content: center;
+}
+
+.hero--banner .hero__ticks {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero--banner .hero__image,
+  .hero--banner .hero__image-placeholder {
+    height: 400px;
+  }
+}
+
+/* =============================================
+   NAV: TRANSPARENT OVERLAY
+   Floats nav over hero on dark/image heroes.
+   Add .nav--transparent to the .nav element.
+   JS removes it on scroll via nav-scroll.
+   ============================================= */
+.nav--transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav--transparent .nav__name,
+.nav--transparent .nav__link {
+  color: var(--color-text-inverse);
+}
+
+.nav--transparent .nav__link:hover,
+.nav--transparent .nav__link--active {
+  color: var(--color-secondary-light);
+}
+
+.nav--transparent .nav__link--active::after {
+  background-color: var(--color-secondary-light);
+}
+
+.nav--transparent .btn--primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.nav--transparent .nav__toggle span,
+.nav--transparent .nav__toggle span::before,
+.nav--transparent .nav__toggle span::after {
+  background-color: var(--color-text-inverse);
+}
+
+/* Two-tier transparent variant */
+.nav--two-tier.nav--transparent {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav--two-tier.nav--transparent .nav__top {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav--two-tier.nav--transparent .nav__brand-name,
+.nav--two-tier.nav--transparent .nav__tagline,
+.nav--two-tier.nav--transparent .nav__contact-link {
+  color: var(--color-text-inverse);
+}
+
+.nav--two-tier.nav--transparent .nav__contact-icon {
+  color: var(--color-secondary-light);
+}
+
 /* Stat bar — hidden by default */
 .hero__stats {
   display: none;
@@ -2140,6 +2361,74 @@
   .page-header {
     padding: var(--space-3xl) 0;
   }
+}
+
+/* Dark coloured page header */
+.page-header--dark {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: var(--color-text-inverse);
+}
+
+.page-header--dark h1 {
+  color: var(--color-text-inverse);
+}
+
+.page-header--dark p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header--dark .breadcrumb__link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-header--dark .breadcrumb__current {
+  color: var(--color-text-inverse);
+}
+
+.page-header--dark .breadcrumb__separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Image background page header */
+.page-header--image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-text-inverse);
+}
+
+.page-header--image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.45) 100%);
+}
+
+.page-header--image .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header--image h1 {
+  color: var(--color-text-inverse);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.page-header--image p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.page-header--image .breadcrumb__link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-header--image .breadcrumb__current {
+  color: var(--color-text-inverse);
+}
+
+.page-header--image .breadcrumb__separator {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* =============================================
@@ -3217,6 +3506,89 @@
 
 .testimonial--avatar .testimonial__stars {
   justify-content: center;
+}
+
+/* =============================================
+   TESTIMONIAL CAROUSEL
+   Single featured testimonial that rotates.
+   JS handles fade transitions + auto-advance.
+   ============================================= */
+.testimonial-carousel {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 200px;
+}
+
+.testimonial-carousel .testimonial {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  text-align: center;
+  box-shadow: none;
+  background: transparent;
+}
+
+.testimonial-carousel .testimonial--active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.testimonial-carousel .testimonial__quote {
+  font-size: var(--text-lg);
+  padding-left: 0;
+  text-align: center;
+}
+
+.testimonial-carousel .testimonial__quote::before {
+  display: none;
+}
+
+.testimonial-carousel .testimonial__stars {
+  justify-content: center;
+}
+
+.testimonial-carousel__nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.testimonial-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.testimonial-carousel__dot:hover {
+  background-color: var(--color-primary-light);
+}
+
+.testimonial-carousel__dot--active {
+  background-color: var(--color-primary);
+  transform: scale(1.3);
+}
+
+/* Large quote mark above carousel */
+.testimonial-carousel__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-primary-light);
+  opacity: 0.4;
 }
 
 /* =============================================

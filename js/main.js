@@ -268,6 +268,56 @@
   }
 
   /* -----------------------------------------
+     TESTIMONIAL CAROUSEL
+     Auto-rotating testimonials with dot nav.
+     ----------------------------------------- */
+  var carousel = document.querySelector('.testimonial-carousel');
+  if (carousel) {
+    var slides = carousel.querySelectorAll('.testimonial');
+    var dotsContainer = carousel.querySelector('.testimonial-carousel__nav');
+    var dots = dotsContainer ? dotsContainer.querySelectorAll('.testimonial-carousel__dot') : [];
+    var currentSlide = 0;
+    var autoplayTimer = null;
+
+    function showSlide(index) {
+      slides.forEach(function (s, i) {
+        s.classList.toggle('testimonial--active', i === index);
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle('testimonial-carousel__dot--active', i === index);
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+
+    function startAutoplay() {
+      autoplayTimer = setInterval(nextSlide, 6000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+
+    // Dot click handlers
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        showSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    // Initial state and autoplay
+    if (slides.length > 1) {
+      showSlide(0);
+      startAutoplay();
+    }
+  }
+
+  /* -----------------------------------------
      COOKIE CONSENT BANNER
      Show banner if not previously accepted.
      Store preference in localStorage.
