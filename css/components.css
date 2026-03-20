@@ -1286,7 +1286,7 @@
 /* --- Image Hero: full-bleed background image with dark overlay --- */
 .hero--image {
   position: relative;
-  padding: var(--space-3xl) 0;
+  padding: calc(var(--space-3xl) + 140px) 0 var(--space-3xl);
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -1379,7 +1379,7 @@
 
 @media (min-width: 768px) {
   .hero--image {
-    padding: var(--space-4xl) 0;
+    padding: calc(var(--space-4xl) + 140px) 0 var(--space-4xl);
     min-height: 650px;
   }
 }
@@ -1482,6 +1482,15 @@
 .nav--transparent .nav__toggle span::before,
 .nav--transparent .nav__toggle span::after {
   background-color: var(--color-text-inverse);
+}
+
+/* Dropdown panel sits on white — reset text to dark */
+.nav--transparent .nav__dropdown-panel .nav__link {
+  color: var(--color-text);
+}
+
+.nav--transparent .nav__dropdown-panel .nav__link:hover {
+  color: var(--color-primary);
 }
 
 /* Two-tier transparent variant */
