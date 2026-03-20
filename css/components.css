@@ -4762,6 +4762,7 @@
 @media (min-width: 768px) {
   .cookie-banner__inner {
     flex-direction: row;
+    align-items: center;
     text-align: left;
   }
 
