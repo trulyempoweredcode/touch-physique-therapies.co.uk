@@ -2864,7 +2864,7 @@
   .steps--connected .step:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 28px;
+    top: calc(var(--space-lg) + 28px);
     right: -12.5%;
     width: 25%;
     height: 2px;
