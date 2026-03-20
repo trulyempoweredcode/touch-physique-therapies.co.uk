@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "D:/claude-custom-projects/Ai-Editor-Sites/www.touch-physique-therapies.co.uk", "-l", "3456"],
+      "port": 3456
+    }
+  ]
+}

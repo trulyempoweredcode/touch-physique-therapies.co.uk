@@ -276,6 +276,10 @@ strong {
   text-align: center;
 }
 
+.text-center h2 {
+  margin-bottom: var(--space-xl);
+}
+
 .text-balance {
   text-wrap: balance;
 }
