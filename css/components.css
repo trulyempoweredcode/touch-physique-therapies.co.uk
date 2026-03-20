@@ -2721,6 +2721,81 @@
 }
 
 /* =============================================
+   BENTO GRID
+   Featured first card spanning 2 rows beside
+   a 2-col grid of smaller cards. Works with
+   4 or 5 items. Uses card--feature children.
+   ============================================= */
+.grid--bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .grid--bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid--bento {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .grid--bento > :first-child {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Bento children get visible card styling */
+.grid--bento > .card--feature {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Highlighted / featured card (dark background) */
+.card--highlight {
+  background-color: var(--color-bg-dark) !important;
+  border-color: transparent !important;
+  color: var(--color-text-inverse);
+}
+
+.card--highlight .card__title {
+  color: var(--color-text-inverse);
+}
+
+.card--highlight .card__text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card--highlight .card__icon {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-secondary-light);
+}
+
+/* Stat number for featured cards */
+.card__stat {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.card--highlight .card__stat {
+  color: var(--color-secondary-light);
+}
+
+/* =============================================
    CARDS: NUMBERED STEPS
    Step 1, 2, 3 process flow.
    ============================================= */
@@ -2775,7 +2850,7 @@
 /* Horizontal steps with connecting line */
 @media (min-width: 768px) {
   .steps {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .steps--connected {
@@ -2794,6 +2869,24 @@
     width: 25%;
     height: 2px;
     background-color: var(--color-border);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* 3-item steps */
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 4-item steps — override to 4 columns */
+  .steps--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 4-item steps — narrower connecting lines for tighter columns */
+  .steps--connected.steps--4 .step:not(:last-child)::after {
+    right: -10%;
+    width: 20%;
   }
 }
 
@@ -5137,6 +5230,7 @@
 .reveal .grid--2 > *,
 .reveal .grid--3 > *,
 .reveal .grid--4 > *,
+.reveal .grid--bento > *,
 .reveal .steps > *,
 .reveal .testimonial-grid > *,
 .reveal .pricing-grid > *,
@@ -5149,6 +5243,7 @@
 .reveal--visible .grid--2 > *,
 .reveal--visible .grid--3 > *,
 .reveal--visible .grid--4 > *,
+.reveal--visible .grid--bento > *,
 .reveal--visible .steps > *,
 .reveal--visible .testimonial-grid > *,
 .reveal--visible .pricing-grid > *,
@@ -5161,6 +5256,7 @@
 .reveal--visible .grid--2 > *:nth-child(1),
 .reveal--visible .grid--3 > *:nth-child(1),
 .reveal--visible .grid--4 > *:nth-child(1),
+.reveal--visible .grid--bento > *:nth-child(1),
 .reveal--visible .steps > *:nth-child(1),
 .reveal--visible .testimonial-grid > *:nth-child(1),
 .reveal--visible .pricing-grid > *:nth-child(1),
@@ -5169,6 +5265,7 @@
 .reveal--visible .grid--2 > *:nth-child(2),
 .reveal--visible .grid--3 > *:nth-child(2),
 .reveal--visible .grid--4 > *:nth-child(2),
+.reveal--visible .grid--bento > *:nth-child(2),
 .reveal--visible .steps > *:nth-child(2),
 .reveal--visible .testimonial-grid > *:nth-child(2),
 .reveal--visible .pricing-grid > *:nth-child(2),
@@ -5177,6 +5274,7 @@
 .reveal--visible .grid--2 > *:nth-child(3),
 .reveal--visible .grid--3 > *:nth-child(3),
 .reveal--visible .grid--4 > *:nth-child(3),
+.reveal--visible .grid--bento > *:nth-child(3),
 .reveal--visible .steps > *:nth-child(3),
 .reveal--visible .testimonial-grid > *:nth-child(3),
 .reveal--visible .pricing-grid > *:nth-child(3),
@@ -5185,12 +5283,14 @@
 .reveal--visible .grid--2 > *:nth-child(4),
 .reveal--visible .grid--3 > *:nth-child(4),
 .reveal--visible .grid--4 > *:nth-child(4),
+.reveal--visible .grid--bento > *:nth-child(4),
 .reveal--visible .steps > *:nth-child(4),
 .reveal--visible .pricing-grid > *:nth-child(4),
 .reveal--visible .team-grid > *:nth-child(4) { transition-delay: 0.3s; }
 
 .reveal--visible .grid--3 > *:nth-child(5),
 .reveal--visible .grid--4 > *:nth-child(5),
+.reveal--visible .grid--bento > *:nth-child(5),
 .reveal--visible .team-grid > *:nth-child(5) { transition-delay: 0.4s; }
 
 .reveal--visible .grid--4 > *:nth-child(6),
@@ -5206,6 +5306,7 @@
   .reveal .grid--2 > *,
   .reveal .grid--3 > *,
   .reveal .grid--4 > *,
+  .reveal .grid--bento > *,
   .reveal .steps > *,
   .reveal .testimonial-grid > *,
   .reveal .pricing-grid > *,
