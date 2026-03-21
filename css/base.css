@@ -133,6 +133,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
 }
 
 /* --- Typography --- */
@@ -193,6 +194,14 @@ strong {
 
 .section--alt {
   background-color: var(--color-bg-alt);
+}
+
+/* Icons inside alt sections: swap bg-alt → surface so they remain visible */
+.section--alt .card__icon,
+.section--alt .icon-box__icon,
+.section--alt .contact-info__icon,
+.section--alt .service-detail__icon {
+  background-color: var(--color-surface);
 }
 
 .section--dark {
