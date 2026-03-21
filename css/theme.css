@@ -90,3 +90,11 @@
 .nav--two-tier.nav--transparent .nav__cta:hover {
   background-color: var(--color-primary-dark);
 }
+
+.nav--two-tier.nav--transparent .nav__toggle span {
+  background-color: var(--color-text-heading);
+}
+
+.nav--two-tier.nav--transparent .nav__toggle {
+  border-color: var(--color-border);
+}
