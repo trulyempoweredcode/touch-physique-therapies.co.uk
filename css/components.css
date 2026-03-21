@@ -2083,13 +2083,14 @@ body:has(.nav--transparent) .hero--image {
 }
 
 .contact-info__label {
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-heading);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
-.contact-info__value {
+.contact-info__value,
+.contact-info__text {
   font-size: var(--text-sm);
   color: var(--color-text-light);
   line-height: var(--line-height-normal);
