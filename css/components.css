@@ -1313,6 +1313,9 @@
   color: var(--color-text-inverse);
   background-color: var(--color-bg-dark);
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
