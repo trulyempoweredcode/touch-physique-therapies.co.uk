@@ -46,55 +46,7 @@
   --text-h3-desktop: 1.3rem;
 }
 
-/* Light transparent nav */
-.nav--two-tier.nav--transparent {
-  background-color: #ffffffbf;
+/* Client-specific: padding on transparent nav */
+.nav--transparent {
   padding: 0px 20px 20px;
-}
-
-.nav--two-tier.nav--transparent .nav__brand-name,
-.nav--two-tier.nav--transparent .nav__name,
-.nav--two-tier.nav--transparent .nav__tagline,
-.nav--two-tier.nav--transparent .nav__title {
-  color: var(--color-text-heading);
-}
-
-.nav--two-tier.nav--transparent .nav__contact-link,
-.nav--two-tier.nav--transparent .nav__contact-item a,
-.nav--two-tier.nav--transparent .nav__contact-item {
-  color: var(--color-text);
-}
-
-.nav--two-tier.nav--transparent .nav__contact-icon,
-.nav--two-tier.nav--transparent .nav__contact-item svg {
-  color: var(--color-primary);
-}
-
-.nav--two-tier.nav--transparent .nav__link {
-  color: var(--color-text);
-}
-
-.nav--two-tier.nav--transparent .nav__link--active {
-  color: var(--color-primary);
-}
-
-.nav--two-tier.nav--transparent .nav__top {
-  border-bottom-color: var(--color-border-light);
-}
-
-.nav--two-tier.nav--transparent .nav__cta {
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
-}
-
-.nav--two-tier.nav--transparent .nav__cta:hover {
-  background-color: var(--color-primary-dark);
-}
-
-.nav--two-tier.nav--transparent .nav__toggle span {
-  background-color: var(--color-text-heading);
-}
-
-.nav--two-tier.nav--transparent .nav__toggle {
-  border-color: var(--color-border);
 }

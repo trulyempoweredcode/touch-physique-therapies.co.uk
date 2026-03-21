@@ -1465,49 +1465,22 @@
 /* =============================================
    NAV: TRANSPARENT OVERLAY
    Floats nav over hero on dark/image heroes.
-   Add .nav--transparent to the .nav element.
+   Add .nav--transparent + .nav--transparent-dark or .nav--transparent-light
+   Supports custom bg via --nav-transparent-bg inline variable.
    JS removes it on scroll via nav-scroll.
    ============================================= */
+
+/* --- Base: positioning only --- */
 .nav--transparent {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--nav-transparent-bg, transparent);
 }
 
-.nav--transparent .nav__name,
-.nav--transparent .nav__link {
-  color: var(--color-text-inverse);
-}
-
-.nav--transparent .nav__title {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.nav--transparent .nav__link:hover,
-.nav--transparent .nav__link--active {
-  color: var(--color-secondary-light);
-}
-
-.nav--transparent .nav__link--active::after {
-  background-color: var(--color-secondary-light);
-}
-
-.nav--transparent .btn--primary {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-
-.nav--transparent .nav__toggle span,
-.nav--transparent .nav__toggle span::before,
-.nav--transparent .nav__toggle span::after {
-  background-color: var(--color-text-inverse);
-}
-
-/* Dropdown menu sits on white — reset text to dark */
+/* Dropdown menu always sits on white — dark text regardless of variant */
 .nav--transparent .nav__dropdown-menu .nav__link {
   color: var(--color-text);
 }
@@ -1516,27 +1489,132 @@
   color: var(--color-primary);
 }
 
-/* Two-tier transparent variant */
-.nav--two-tier.nav--transparent {
-  background-color: transparent;
+/* --- Dark variant: white text on dark/image backgrounds --- */
+.nav--transparent-dark {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--nav-transparent-bg, rgba(42, 42, 42, 0.54));
 }
 
-.nav--two-tier.nav--transparent .nav__top {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav--two-tier.nav--transparent .nav__brand-name,
-.nav--two-tier.nav--transparent .nav__tagline,
-.nav--two-tier.nav--transparent .nav__contact-link,
-.nav--two-tier.nav--transparent .nav__contact-item a,
-.nav--two-tier.nav--transparent .nav__contact-item {
+.nav--transparent-dark .nav__name,
+.nav--transparent-dark .nav__link {
   color: var(--color-text-inverse);
 }
 
-.nav--two-tier.nav--transparent .nav__contact-icon,
-.nav--two-tier.nav--transparent .nav__contact-item svg {
+.nav--transparent-dark .nav__title {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav--transparent-dark .nav__link:hover,
+.nav--transparent-dark .nav__link--active {
   color: var(--color-secondary-light);
+}
+
+.nav--transparent-dark .nav__link--active::after {
+  background-color: var(--color-secondary-light);
+}
+
+.nav--transparent-dark .btn--primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.nav--transparent-dark .nav__toggle span,
+.nav--transparent-dark .nav__toggle-bar {
+  background-color: var(--color-text-inverse);
+}
+
+.nav--transparent-dark .nav__toggle {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Two-tier dark */
+.nav--two-tier.nav--transparent-dark {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav--two-tier.nav--transparent-dark .nav__top {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav--two-tier.nav--transparent-dark .nav__brand-name,
+.nav--two-tier.nav--transparent-dark .nav__name,
+.nav--two-tier.nav--transparent-dark .nav__tagline,
+.nav--two-tier.nav--transparent-dark .nav__contact-link,
+.nav--two-tier.nav--transparent-dark .nav__contact-item a,
+.nav--two-tier.nav--transparent-dark .nav__contact-item {
+  color: var(--color-text-inverse);
+}
+
+.nav--two-tier.nav--transparent-dark .nav__contact-icon,
+.nav--two-tier.nav--transparent-dark .nav__contact-item svg {
+  color: var(--color-secondary-light);
+}
+
+/* --- Light variant: dark text on light overlay --- */
+.nav--transparent-light {
+  border-bottom: 1px solid var(--color-border-light);
+  background-color: var(--nav-transparent-bg, rgba(255, 255, 255, 0.75));
+}
+
+.nav--transparent-light .nav__name,
+.nav--transparent-light .nav__brand-name {
+  color: var(--color-text-heading);
+}
+
+.nav--transparent-light .nav__title,
+.nav--transparent-light .nav__tagline {
+  color: var(--color-text-light);
+}
+
+.nav--transparent-light .nav__link {
+  color: var(--color-text);
+}
+
+.nav--transparent-light .nav__link:hover,
+.nav--transparent-light .nav__link--active {
+  color: var(--color-primary);
+}
+
+.nav--transparent-light .nav__link--active::after {
+  background-color: var(--color-primary);
+}
+
+.nav--transparent-light .btn--primary,
+.nav--transparent-light .nav__cta {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.nav--transparent-light .btn--primary:hover,
+.nav--transparent-light .nav__cta:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.nav--transparent-light .nav__toggle span,
+.nav--transparent-light .nav__toggle-bar {
+  background-color: var(--color-text-heading);
+}
+
+.nav--transparent-light .nav__toggle {
+  border-color: var(--color-border);
+}
+
+/* Two-tier light */
+.nav--two-tier.nav--transparent-light .nav__top {
+  border-bottom-color: var(--color-border-light);
+}
+
+.nav--two-tier.nav--transparent-light .nav__contact-link,
+.nav--two-tier.nav--transparent-light .nav__contact-item a,
+.nav--two-tier.nav--transparent-light .nav__contact-item {
+  color: var(--color-text);
+}
+
+.nav--two-tier.nav--transparent-light .nav__contact-icon,
+.nav--two-tier.nav--transparent-light .nav__contact-item svg {
+  color: var(--color-primary);
 }
 
 /* Stat bar — hidden by default */
