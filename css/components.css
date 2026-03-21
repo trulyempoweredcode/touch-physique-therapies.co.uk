@@ -2009,6 +2009,7 @@ body:has(.nav--transparent) .hero--image {
 /* Checkbox + label alignment */
 .form__group--checkbox {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   gap: var(--space-sm);
 }
