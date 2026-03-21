@@ -2146,7 +2146,7 @@
 
   .about-hero__inner {
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    gap: var(--space-2xl);
   }
 }
 
