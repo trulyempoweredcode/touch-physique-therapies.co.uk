@@ -730,7 +730,7 @@
   font-size: var(--text-xs);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary-dark);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-full);
   border: 1px solid var(--color-border);
@@ -1305,7 +1305,7 @@
 /* --- Image Hero: full-bleed background image with dark overlay --- */
 .hero--image {
   position: relative;
-  padding: calc(var(--space-3xl) + 140px) 0 var(--space-3xl);
+  padding: var(--space-3xl) 0;
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -1399,10 +1399,19 @@
   border-color: var(--color-text-inverse);
 }
 
+/* Extra top padding when transparent nav overlays the hero */
+body:has(.nav--transparent) .hero--image {
+  padding-top: calc(var(--space-3xl) + 140px);
+}
+
 @media (min-width: 768px) {
   .hero--image {
-    padding: calc(var(--space-4xl) + 140px) 0 var(--space-4xl);
+    padding: var(--space-4xl) 0;
     min-height: 650px;
+  }
+
+  body:has(.nav--transparent) .hero--image {
+    padding-top: calc(var(--space-4xl) + 140px);
   }
 }
 
@@ -1723,7 +1732,7 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1798,7 +1807,7 @@
    TESTIMONIALS
    ============================================= */
 .testimonials {
-  /* background controlled by .section / .section--alt — dont force here */
+  /* background controlled by .section / .section--alt — don't force here */
 }
 
 .testimonial {
@@ -2059,7 +2068,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2098,6 +2107,7 @@
   align-items: center;
 }
 
+.about-hero h1,
 .about-hero h2 {
   margin-bottom: var(--space-lg);
 }
@@ -2271,7 +2281,7 @@
   width: 64px;
   height: 64px;
   border-radius: var(--radius-lg);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2485,7 +2495,7 @@
    ============================================= */
 .page-header {
   padding: var(--space-2xl) 0;
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   text-align: center;
 }
 
@@ -2787,6 +2797,58 @@
 }
 
 /* =============================================
+   SPLIT: FULL-BLEED
+   Edge-to-edge image on one side, padded text on the other.
+   Image fills 50% of viewport width with no gaps or rounding.
+   Use .split--bleed-reverse to flip image to the right.
+   ============================================= */
+.split--bleed {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.split--bleed .split__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.split--bleed .split__content {
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.split--bleed .split__content h2 {
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .split--bleed {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .split--bleed .split__image {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .split--bleed .split__content {
+    padding: var(--space-2xl) var(--space-4xl);
+  }
+
+  /* Reverse: image on right */
+  .split--bleed-reverse {
+    direction: rtl;
+  }
+
+  .split--bleed-reverse > * {
+    direction: ltr;
+  }
+}
+
+/* =============================================
    CONTENT: FULL-WIDTH TEXT
    Centered heading + text, no image.
    ============================================= */
@@ -2895,7 +2957,7 @@
 
 /* Soft/muted variant */
 .highlight-box--soft .highlight-box__heading {
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   color: var(--color-text-heading);
 }
 
@@ -2922,7 +2984,7 @@
   position: relative;
   padding: var(--space-lg) var(--space-xl);
   margin: var(--space-xl) 0;
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
@@ -3050,7 +3112,7 @@
   width: 56px;
   height: 56px;
   border-radius: var(--radius-lg);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3873,7 +3935,7 @@
 
 /* Surface/light variant */
 .info-band--light {
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   color: var(--color-text);
 }
 
@@ -4245,7 +4307,7 @@
   gap: var(--space-lg);
   align-items: flex-start;
   padding: var(--space-xl);
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   border-radius: var(--radius-lg);
 }
 
@@ -4375,7 +4437,7 @@
 }
 
 .announcement-bar--subtle {
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   color: var(--color-text);
 }
 
@@ -4574,7 +4636,7 @@
 }
 
 .comparison-table thead th {
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   padding: var(--space-md) var(--space-lg);
   font-family: var(--font-heading);
   font-size: var(--text-md);
@@ -4753,7 +4815,7 @@
 
 /* --- Simple Centered Footer --- */
 .footer--simple {
-  /* background controlled by .section / .section--alt — dont force here */
+  background-color: var(--color-bg-alt);
   color: var(--color-text);
   padding: var(--space-xl) 0;
   text-align: center;
