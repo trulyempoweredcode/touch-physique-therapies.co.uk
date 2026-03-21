@@ -1788,6 +1788,7 @@ body:has(.nav--transparent) .hero--image {
   margin-right: auto;
   width: 56px;
   height: 56px;
+  border-radius: 50%;
 }
 
 /* Feature Card Variant */
