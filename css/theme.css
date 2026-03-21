@@ -46,8 +46,36 @@
   --text-h3-desktop: 1.3rem;
 }
 
-/* Client-specific transparent nav tint */
+/* Light transparent nav */
 .nav--two-tier.nav--transparent {
-  background-color: #3b6fa09c;
+  background-color: #ffffffbf;
   padding: 0px 20px 20px;
+}
+
+.nav--two-tier.nav--transparent .nav__brand-name,
+.nav--two-tier.nav--transparent .nav__tagline {
+  color: var(--color-text-heading);
+}
+
+.nav--two-tier.nav--transparent .nav__contact-link,
+.nav--two-tier.nav--transparent .nav__contact-item a,
+.nav--two-tier.nav--transparent .nav__contact-item {
+  color: var(--color-text);
+}
+
+.nav--two-tier.nav--transparent .nav__contact-icon,
+.nav--two-tier.nav--transparent .nav__contact-item svg {
+  color: var(--color-primary);
+}
+
+.nav--two-tier.nav--transparent .nav__link {
+  color: var(--color-text);
+}
+
+.nav--two-tier.nav--transparent .nav__link--active {
+  color: var(--color-primary);
+}
+
+.nav--two-tier.nav--transparent .nav__top {
+  border-bottom-color: var(--color-border-light);
 }
