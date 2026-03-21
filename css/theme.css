@@ -45,3 +45,9 @@
   --text-h2-desktop: 2rem;
   --text-h3-desktop: 1.3rem;
 }
+
+/* Client-specific transparent nav tint */
+.nav--two-tier.nav--transparent {
+  background-color: #3b6fa09c;
+  padding: 0px 20px 20px;
+}
