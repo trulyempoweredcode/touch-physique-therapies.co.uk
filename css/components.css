@@ -1807,7 +1807,7 @@
 }
 
 .testimonial__quote {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: var(--text-md);
   font-style: italic;
   line-height: var(--line-height-relaxed);
@@ -1829,6 +1829,7 @@
 }
 
 .testimonial__author {
+  font-family: var(--font-heading);
   font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-heading);
@@ -1836,6 +1837,7 @@
 }
 
 .testimonial__detail {
+  font-family: var(--font-heading);
   font-size: var(--text-sm);
   color: var(--color-text-light);
   margin-bottom: 0;
