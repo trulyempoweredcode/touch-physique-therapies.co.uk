@@ -53,7 +53,9 @@
 }
 
 .nav--two-tier.nav--transparent .nav__brand-name,
-.nav--two-tier.nav--transparent .nav__tagline {
+.nav--two-tier.nav--transparent .nav__name,
+.nav--two-tier.nav--transparent .nav__tagline,
+.nav--two-tier.nav--transparent .nav__title {
   color: var(--color-text-heading);
 }
 
@@ -78,4 +80,13 @@
 
 .nav--two-tier.nav--transparent .nav__top {
   border-bottom-color: var(--color-border-light);
+}
+
+.nav--two-tier.nav--transparent .nav__cta {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.nav--two-tier.nav--transparent .nav__cta:hover {
+  background-color: var(--color-primary-dark);
 }
