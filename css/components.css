@@ -162,7 +162,7 @@
   top: 72px;
   background-color: var(--color-surface);
   z-index: 99;
-  padding: var(--space-3xl) var(--space-lg);
+  padding: var(--space-xl) var(--space-lg);
   flex-direction: column;
   gap: var(--space-lg);
   overflow-y: auto;
@@ -174,10 +174,9 @@
               visibility 0.35s;
 }
 
-/* When opened from the compact scroll header, fill from top */
+/* When opened from the compact scroll header, start below it */
 .nav__mobile--from-scroll {
-  top: 0;
-  padding-top: calc(56px + var(--space-xl));
+  top: 56px;
 }
 
 .nav__mobile--open {
