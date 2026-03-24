@@ -50,3 +50,14 @@
 .nav--transparent {
   padding: 0px 20px 20px;
 }
+
+/* Client-specific: keep card headings at full H3 size (no 0.8 scaling) */
+.card__title,
+.step__title,
+.image-card__title,
+.overlay-card__title,
+.blog-card__title,
+.approach-item h3,
+.pricing-card h3 {
+  font-size: var(--text-h3-desktop);
+}
