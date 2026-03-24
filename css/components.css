@@ -177,6 +177,7 @@
 /* When opened from the compact scroll header, start below it */
 .nav__mobile--from-scroll {
   top: 56px;
+  z-index: 201;
 }
 
 .nav__mobile--open {
