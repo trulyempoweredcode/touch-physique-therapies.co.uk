@@ -469,7 +469,7 @@
 }
 
 .nav--two-tier .nav__link {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 /* Mobile: hamburger in top bar, not bottom */
