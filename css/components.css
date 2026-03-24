@@ -2065,6 +2065,11 @@ body:has(.nav--transparent) .hero--showcase {
   color: var(--color-primary);
 }
 
+/* On alt-background sections, icon needs contrast against card bg */
+.section--alt .card__icon {
+  background-color: var(--color-surface-alt);
+}
+
 .card__icon svg {
   width: 24px;
   height: 24px;
@@ -2114,6 +2119,21 @@ body:has(.nav--transparent) .hero--showcase {
   width: 56px;
   height: 56px;
   border-radius: 50%;
+}
+
+.card--service .card__link {
+  justify-content: center;
+}
+
+/* Clickable service cards (when wrapped in <a>) */
+a.card--service {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.card--service:hover .card__link {
+  gap: var(--space-sm);
 }
 
 /* Feature Card Variant */
@@ -2450,9 +2470,10 @@ body:has(.nav--transparent) .hero--showcase {
 
 .about-hero__image {
   width: 100%;
+  max-height: 100vh;
   aspect-ratio: auto;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
 }
 
 .about-hero__image-placeholder {
@@ -3793,8 +3814,8 @@ body:has(.nav--transparent) .hero--showcase {
   border-radius: var(--radius-full);
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: var(--text-xl);
   margin: 0 auto var(--space-lg);
 }
