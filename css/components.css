@@ -2281,7 +2281,7 @@ a.card--service:hover .card__link {
 .form__select {
   width: 100%;
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
+  border: 2px solid #ced1d5;
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
   font-size: var(--text-base);
@@ -2520,7 +2520,7 @@ a.card--service:hover .card__link {
   }
 
   .about-hero__inner > div:last-child {
-    padding: var(--space-2xl) var(--space-4xl) var(--space-2xl) var(--space-4xl);
+    padding: var(--space-4xl);
   }
 }
 
@@ -2552,16 +2552,16 @@ a.card--service:hover .card__link {
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: transparent;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .quals-list__icon svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .quals-list__text {
@@ -2634,8 +2634,8 @@ a.card--service:hover .card__link {
    ============================================= */
 /* Service section wrapper — use around each service block */
 .service-section {
-  padding: var(--space-xl) 0;
-  border-bottom: 1px solid var(--color-border-light);
+  padding: 96px 0;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .service-section:last-of-type {
@@ -2773,8 +2773,8 @@ a.card--service:hover .card__link {
     position: sticky;
     top: 100px;
     align-self: start;
-    margin-top: var(--space-2xl);
-    padding: var(--space-xl);
+    margin-top: 96px;
+    padding: var(--space-md);
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-light);
@@ -2795,6 +2795,7 @@ a.card--service:hover .card__link {
 .services-sidebar__nav {
   display: flex;
   flex-direction: column;
+  gap: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
 
@@ -2919,14 +2920,14 @@ a.card--service:hover .card__link {
 
 .faq-item__question {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: calc(var(--text-h3-desktop) * 0.8);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-heading);
   margin-bottom: var(--space-sm);
 }
 
 .faq-item__answer {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-light);
   line-height: var(--line-height-relaxed);
 }
@@ -2996,7 +2997,7 @@ a.card--service:hover .card__link {
    PAGE HEADER (inner pages)
    ============================================= */
 .page-header {
-  padding: var(--space-2xl) 0;
+  padding: 96px 0;
   background-color: var(--color-bg-alt);
   text-align: center;
 }
@@ -3030,6 +3031,10 @@ a.card--service:hover .card__link {
 
 .page-header--dark p {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header--dark .section-label {
+  color: var(--color-secondary-light);
 }
 
 .page-header--dark .breadcrumb__link {
@@ -3379,6 +3384,53 @@ a.card--service:hover .card__link {
 
 .text-block .btn {
   margin-top: var(--space-lg);
+}
+
+/* =============================================
+   CONTENT: STORY SPLIT
+   Centered heading above, then h3 lead on the left
+   with body paragraphs on the right.
+   ============================================= */
+.story-split {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+}
+
+.story-split .text-center {
+  margin-bottom: var(--space-2xl);
+}
+
+.story-split__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.story-split__lead {
+  line-height: var(--line-height-tight);
+  color: var(--color-text-heading);
+}
+
+.story-split__lead h3 {
+  font-weight: 400;
+  line-height: 1.3em;
+}
+
+.story-split__content p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+.story-split__content p + p {
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .story-split__body {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-2xl);
+  }
 }
 
 /* =============================================
@@ -4969,7 +5021,7 @@ a.card--service:hover .card__link {
   padding: var(--space-lg) 0;
   text-align: left;
   font-family: var(--font-heading);
-  font-size: calc(var(--text-h3-desktop) * 0.85);
+  font-size: calc(var(--text-h3-desktop) * 0.8);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-heading);
   cursor: pointer;
@@ -4987,11 +5039,15 @@ a.card--service:hover .card__link {
   width: 24px;
   height: 24px;
   color: var(--color-primary);
-  transition: transform var(--transition-base);
 }
 
-.accordion__item--open .accordion__icon {
-  transform: rotate(45deg);
+.accordion__icon-vertical {
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.accordion__item--open .accordion__icon-vertical {
+  transform: scaleY(0);
+  opacity: 0;
 }
 
 .accordion__content {
@@ -5004,7 +5060,7 @@ a.card--service:hover .card__link {
 }
 
 .accordion__content p {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-light);
   line-height: var(--line-height-relaxed);
 }
