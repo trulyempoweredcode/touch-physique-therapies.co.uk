@@ -2575,6 +2575,34 @@ a.card--service:hover .card__link {
   margin-bottom: 2px;
 }
 
+/* Qualifications Grid (compact version for testimonials page) */
+.quals-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .quals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.quals-grid__item {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-normal);
+  padding: 10px 14px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.quals-grid__item strong {
+  color: var(--color-text-heading);
+}
+
 /* Approach Section */
 .approach-grid {
   display: grid;
