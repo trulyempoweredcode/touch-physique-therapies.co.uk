@@ -61,3 +61,7 @@
 .pricing-card h3 {
   font-size: var(--text-h3-desktop);
 }
+
+.hero--image .hero__text {
+  max-width: 640px;
+}
