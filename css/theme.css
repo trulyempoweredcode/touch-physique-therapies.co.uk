@@ -65,3 +65,7 @@
 .hero--image .hero__text {
   max-width: 640px;
 }
+
+.testimonials {
+  background-color: var(--color-surface);
+}
