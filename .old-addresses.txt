@@ -1,0 +1,16 @@
+# Every address this site has had. The weekly old-address guard (Ai-Editor scripts/address_guard.py)
+# checks each one still works and forwards it if not. Add lines freely; never remove one.
+# archive: pending
+/
+/bowen-therapy.html
+/deep-oscillation.html
+/sports-massage.html
+/deep-tissue-massage.html
+/bowen-fascial-unwinding.html
+/about.html
+/testimonials.html
+/faqs.html
+/contact.html
+/scar-therapy.html
+/cookies-policy.html
+/privacy.html
