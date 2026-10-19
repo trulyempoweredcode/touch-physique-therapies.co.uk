@@ -1,6 +1,6 @@
 # Every address this site has had. The weekly old-address guard (Ai-Editor scripts/address_guard.py)
 # checks each one still works and forwards it if not. Add lines freely; never remove one.
-# archive: pending
+# archive: done
 /
 /bowen-therapy.html
 /deep-oscillation.html
